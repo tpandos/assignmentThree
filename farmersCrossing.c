@@ -14,7 +14,7 @@
 pthread_t tid[THREAD_NUMBER]; 
 pthread_mutex_t mutexLock; 
 
-void threadFunc();  // thread function prototype 
+void *threadFunc();  // thread function prototype 
 
 int main(int argc, char* argv[]){
 
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]){
 }
 
 // thread function implementation 
-void threadFunc(){
+void *threadFunc(){
 
     pthread_mutex_lock(&mutexLock); // locking the variables until work is done
 
